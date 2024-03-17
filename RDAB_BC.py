@@ -18,8 +18,7 @@ if os.path.exists(model_path):
 else:
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
 
-#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = 'cpu'
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 from models.rdab_network import RDAB as net
 model = net(in_nc=3, out_nc=3, nc=[64,128,256,512], nb=4, act_mode='R')
